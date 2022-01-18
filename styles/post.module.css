@@ -24,7 +24,7 @@
     top: -1em;
     right: 1em;
     background: var(--card-fill);
-    width: 2em;
+    padding: 0 0.5em;
     height: 2em;
     border-radius: 2em;
     box-shadow: var(--small-shadow);
@@ -94,4 +94,5 @@
     font-size: 1em;
     box-shadow: var(--small-shadow);
     cursor: pointer;
+    font-family: 'Prompt', sans-serif;
 }

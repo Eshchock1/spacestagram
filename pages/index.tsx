@@ -13,7 +13,6 @@ const Home: NextPage = () => {
   const [feed, setFeed] = useState([])
   const [gridColumns, setGridColumns] = useState(0)
   const [filter, setFilter] = useState("All")
-  const [page, setPage] = useState(1)
   const allFilters = "orion, International Space Station, hubble, Mars 2020, space x, apollo, history"
   useEffect(() => {
     let today = new Date()
@@ -28,13 +27,13 @@ const Home: NextPage = () => {
 
   useEffect(()=>{
     if (filter == "All") {
-      axios.get(`https://images-api.nasa.gov/search?keywords=${allFilters}&media_type=image&page=${page}`)
+      axios.get(`https://images-api.nasa.gov/search?keywords=${allFilters}&media_type=image&page=1`)
       .then(res => {
         setFeed(res.data.collection.items)
       })
     }
     else {
-      axios.get(`https://images-api.nasa.gov/search?keywords=${filter}&media_type=image&page=${page}`)
+      axios.get(`https://images-api.nasa.gov/search?keywords=${filter}&media_type=image&page=1`)
       .then(res => {
         setFeed(res.data.collection.items)
       })
@@ -82,12 +81,12 @@ const Home: NextPage = () => {
           <div className={styles.featured}>
             <h1 className={styles.title}>Featured Posts</h1>
             <div className={styles.grid}>
-              {featured.map((post:any, key:number)=>{
+              {featured.reverse().map((post:any, key:number)=>{
                 return (
                   post.title && post.explanation && post.url && post.media_type == "image" && key < gridColumns &&
                 <Post
                   key={key}
-                  id={post.date} 
+                  id={"apod-" + post.date} 
                   title={post.title} 
                   description={post.explanation}
                   creator={post.copyright}

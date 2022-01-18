@@ -14,6 +14,7 @@ const Post: FC<{
 
     const router = useRouter()
     const [liked, setLiked] = useState(false) 
+    const [shareLinkCopied, setShareLinkCopied] = useState<boolean>(false)
 
     const formatText = (text:string, length:number) => {
       if (text.length < length) {
@@ -26,17 +27,21 @@ const Post: FC<{
 
     const formatDate = (str:string) => {
       let date = new Date(str)
-      return date.getFullYear().toString() + "-" + (date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1).toString() : (date.getMonth() + 1).toString()) + "-" + (date.getDate() < 10 ? "0" + date.getDate().toString() : date.getDate().toString())    }
+      return date.getFullYear().toString() + "-" + (date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1).toString() : (date.getMonth() + 1).toString()) + "-" + (date.getDate() < 10 ? "0" + date.getDate().toString() : date.getDate().toString())
+    }
 
     useEffect(()=>{
       const isLiked = localStorage.getItem(id)
-      if (isLiked == "true") {
-        setLiked(true)
-      }
-      else {
-        setLiked(false)
-      }
+      setLiked(isLiked == "true")
     }, [id])
+
+    useEffect(()=>{
+      if (shareLinkCopied) {
+        setTimeout(() => {
+          setShareLinkCopied(false)
+        }, 2000);
+      }
+    }, [shareLinkCopied])
 
     const likeAritfact = () => {
       if (liked) {
@@ -57,7 +62,7 @@ const Post: FC<{
           </div>
           <div className={styles.descriptionContainer}>
             <div className={styles.creator}><h4>{creator?formatText(creator, 20):"Unknown"}</h4></div>
-            <div className={styles.share}><BiShareAlt/></div>  
+            <div className={styles.share} onClick={(e)=>{navigator.clipboard.writeText(window.location.href + "/" + id);setShareLinkCopied(true)}}>{shareLinkCopied?"link copied":<BiShareAlt/>}</div> 
             <span>{formatDate(date)}</span>
             <h1>{formatText(title, 55)}</h1>
             <p>{formatText(description, 65)}</p>
