@@ -1,0 +1,97 @@
+.postContainer {
+    width: 17em;
+    height: 25em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1em;
+    box-shadow: var(--large-shadow);
+    background: var(--card-fill);
+}
+
+.imageContainer {
+    height: 13.5em;
+    width: 100%;
+    position: relative;
+}
+.imageContainer img {
+    height: 13.5em;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1em 1em 0 0;
+}
+.descriptionContainer .share, .imageContainer .like {
+    position: absolute;
+    top: -1em;
+    right: 1em;
+    background: var(--card-fill);
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
+    box-shadow: var(--small-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.imageContainer .like {
+    top: 1em;
+    bottom: auto;
+}
+
+.descriptionContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1em;
+    height: 100%;
+    position: relative;
+}
+.descriptionContainer .creator {
+    position: absolute;
+    top: -1em;
+    left: 0.75em;
+    background: var(--card-fill);
+    box-shadow: var(--small-shadow);
+    padding: 0 1em;
+    height: 2em;
+    border-radius: 5em;
+    display: flex;
+    align-items: center;
+}
+.descriptionContainer .creator h4 {
+    background-image: var(--grad-1);
+    font-weight: 500;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.descriptionContainer span {
+    position: absolute;
+    bottom:1.5em;
+    font-size: 0.8em;
+    color: var(--text-2);
+}
+.descriptionContainer h1 {
+    margin-top: 1.5em;
+    font-size: 1em;
+    color: var(--text-1);
+    word-spacing: -0.1em;
+}
+.descriptionContainer p {
+    margin-top: -0.5em;
+    font-size: 0.9em;
+    color: var(--text-2);
+    word-spacing: -0.2em;
+}
+.descriptionContainer button {
+    position: absolute;
+    padding: 0.5em 2em;
+    bottom: 1em;
+    right: 1em;
+    background:var(--text-1);
+    color: white;
+    border-radius:20em;
+    border: none;
+    font-size: 1em;
+    box-shadow: var(--small-shadow);
+    cursor: pointer;
+}

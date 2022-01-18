@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@200;300;400;500;600&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Prompt', sans-serif;
+  overflow-x: hidden;
 }
 
 a {
@@ -13,4 +15,33 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --text-1: #353535;
+  --text-2: #585858;
+  --text-3: #808080;
+  --card-fill: #FAFAFA;
+  --container-fill: #F7F7F7;
+  --sub-container-fill: #F1F1F1;
+  --grad-1: linear-gradient(289.93deg, #D64F8A 12.45%, #FF7A7A 87.59%);
+  --grad-2: linear-gradient(300.12deg, #E96666 21.08%, #E98D66 84.76%);
+  --large-shadow: 0px 3px 20px rgba(0, 0, 0, 0.15);
+  --small-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 16px;
+  background: #cacaca;
+  border: 6px solid #fff;
 }
