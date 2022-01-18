@@ -27,13 +27,15 @@
 }
 .featured .grid, .feed .grid {
   margin-top: 2em;
-  display: inline-grid;
+  display: grid;
   width: 100%;
 	column-gap: 1.5em;
   row-gap: 3em;
 }
-
-
+.grid .postWrapper {
+  display: flex;
+  justify-content: center;
+}
 .contentWrapper .feed {
   padding-top: 1em;
 }
@@ -42,6 +44,7 @@
   flex-direction: row;
   align-self: center;
   margin-bottom: 1em;
+  flex-wrap: wrap;
 }
 .feed .filters div {
   cursor: pointer;
@@ -53,4 +56,15 @@
 }
 .feed .filters .active {
   background: var(--sub-container-fill);
+}
+
+@media only screen and (max-width: 1000px) {
+  .feed .filters {
+    margin-top: 1em;
+  }
+  .feed .filters div {
+    margin-top: 0.75em;
+    border: 2px solid var(--sub-container-fill);
+    margin-right: 0.4em;
+  }
 }

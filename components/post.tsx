@@ -61,8 +61,8 @@ const Post: FC<{
             <div className={styles.like} onClick={()=>likeAritfact()}>{liked?<AiFillHeart color="#FF5656"/>:<AiOutlineHeart/>}</div>
           </div>
           <div className={styles.descriptionContainer}>
-            <div className={styles.creator}><h4>{creator?formatText(creator, 20):"Unknown"}</h4></div>
-            <div className={styles.share} onClick={(e)=>{navigator.clipboard.writeText(window.location.href + "/" + id);setShareLinkCopied(true)}}>{shareLinkCopied?"link copied":<BiShareAlt/>}</div> 
+            <div className={styles.creator}><h4>{creator?formatText(creator, 15):"Unknown"}</h4></div>
+            <div className={styles.share} style={{fontSize:shareLinkCopied?'0.85em':'1em'}} onClick={(e)=>{navigator.clipboard.writeText(window.location.href + "/" + id);setShareLinkCopied(true)}}>{shareLinkCopied?"link copied":<BiShareAlt/>}</div> 
             <span>{formatDate(date)}</span>
             <h1>{formatText(title, 55)}</h1>
             <p>{formatText(description, 65)}</p>

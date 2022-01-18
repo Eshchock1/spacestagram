@@ -59,6 +59,7 @@
 }
 .descriptionContainer .creator h4 {
     background-image: var(--grad-1);
+    font-size: 0.85em;
     font-weight: 500;
     background-clip: text;
     -webkit-text-fill-color: transparent;
