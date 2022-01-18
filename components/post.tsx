@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useContext, useState} from 'react'
+import React, { FC, useEffect, useState} from 'react'
 import styles from '../styles/post.module.css'
 import {BiShareAlt} from 'react-icons/bi'
 import {AiOutlineHeart, AiFillHeart} from 'react-icons/ai'
@@ -57,7 +57,7 @@ const Post: FC<{
     return (
       <div className={styles.postContainer}>
           <div className={styles.imageContainer}>
-            <img src={image}/>
+            <img alt="not found" src={image}/>
             <div className={styles.like} onClick={()=>likeAritfact()}>{liked?<AiFillHeart color="#FF5656"/>:<AiOutlineHeart/>}</div>
           </div>
           <div className={styles.descriptionContainer}>

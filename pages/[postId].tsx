@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
 import {useEffect, useState} from 'react'
 import styles from '../styles/post-page.module.css'
@@ -133,7 +132,7 @@ const PostPage: NextPage = () => {
           <div className={styles.leftWrapper}>
             <button onClick={()=>router.replace("/")}><IoReturnUpBack size={24}/>&nbsp; Return to feed</button>
             <div className={styles.imageContainer}>
-              <img src={image} />
+              <img alt="not found" src={image} />
             </div>
           </div>
           <div className={styles.rightWrapper}>
