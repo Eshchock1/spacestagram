@@ -100,7 +100,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <div className={styles.contentWrapper}>
           <div className={styles.featured}>
-            <h1 className={styles.title}>Spacestagram's Featured Posts</h1>
+            <h1 className={styles.title}>Spacestagram&apos;s Featured Posts</h1>
             <div className={styles.grid}>
               {featured.map((post: any, key: number) => {
                 return (

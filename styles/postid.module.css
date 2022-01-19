@@ -58,7 +58,7 @@
   .rightWrapper .original {
     position: absolute;
     top: 1.5em;
-    right: 4em;
+    right: 7em;
     background: var(--card-fill);
     padding: 0 0.5em;
     height: 2em;
@@ -73,7 +73,7 @@
     right: 1em;
   }
   .rightWrapper .original {
-    right: 7em;
+    right: 4em;
   }
   .rightWrapper h4 {
     background-image: var(--grad-1);
