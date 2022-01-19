@@ -6,20 +6,21 @@
     border-radius: 1em;
     box-shadow: var(--large-shadow);
     background: var(--card-fill);
-}
-
-.imageContainer {
+  }
+  
+  .imageContainer {
     height: 13.5em;
     width: 100%;
     position: relative;
-}
-.imageContainer img {
+  }
+  .imageContainer img {
     height: 13.5em;
     width: 100%;
     object-fit: cover;
     border-radius: 1em 1em 0 0;
-}
-.descriptionContainer .share, .imageContainer .like {
+  }
+  .descriptionContainer .share,
+  .imageContainer .like {
     position: absolute;
     top: -1em;
     right: 1em;
@@ -32,20 +33,20 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-}
-.imageContainer .like {
+  }
+  .imageContainer .like {
     top: 1em;
     bottom: auto;
-}
-
-.descriptionContainer {
+  }
+  
+  .descriptionContainer {
     display: flex;
     flex-direction: column;
     padding: 0 1em;
     height: 100%;
     position: relative;
-}
-.descriptionContainer .creator {
+  }
+  .descriptionContainer .creator {
     position: absolute;
     top: -1em;
     left: 0.75em;
@@ -56,44 +57,44 @@
     border-radius: 5em;
     display: flex;
     align-items: center;
-}
-.descriptionContainer .creator h4 {
+  }
+  .descriptionContainer .creator h4 {
     background-image: var(--grad-1);
     font-size: 0.85em;
     font-weight: 500;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-}
-.descriptionContainer span {
+  }
+  .descriptionContainer span {
     position: absolute;
-    bottom:1.5em;
+    bottom: 1.5em;
     font-size: 0.8em;
     color: var(--text-2);
-}
-.descriptionContainer h1 {
+  }
+  .descriptionContainer h1 {
     margin-top: 1.5em;
     font-size: 1em;
     color: var(--text-1);
     word-spacing: -0.1em;
-}
-.descriptionContainer p {
+  }
+  .descriptionContainer p {
     margin-top: -0.5em;
     font-size: 0.9em;
     color: var(--text-2);
     word-spacing: -0.2em;
-}
-.descriptionContainer button {
+  }
+  .descriptionContainer button {
     position: absolute;
     padding: 0.5em 2em;
     bottom: 1em;
     right: 1em;
-    background:var(--text-1);
+    background: var(--text-1);
     color: white;
-    border-radius:20em;
+    border-radius: 20em;
     border: none;
     font-size: 1em;
     box-shadow: var(--small-shadow);
     cursor: pointer;
-    font-family: 'Prompt', sans-serif;
-}
+    font-family: "Prompt", sans-serif;
+  }  

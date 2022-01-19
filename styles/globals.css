@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@200;300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@200;300;400;500;600&display=swap");
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Prompt', sans-serif;
+  font-family: "Prompt", sans-serif;
   overflow-x: hidden;
 }
 
@@ -21,15 +21,14 @@ a {
   --text-1: #353535;
   --text-2: #585858;
   --text-3: #808080;
-  --card-fill: #FAFAFA;
-  --container-fill: #F7F7F7;
-  --sub-container-fill: #F1F1F1;
-  --grad-1: linear-gradient(289.93deg, #D64F8A 12.45%, #FF7A7A 87.59%);
-  --grad-2: linear-gradient(300.12deg, #E96666 21.08%, #E98D66 84.76%);
+  --card-fill: #fafafa;
+  --container-fill: #f7f7f7;
+  --sub-container-fill: #f1f1f1;
+  --grad-1: linear-gradient(289.93deg, #d64f8a 12.45%, #ff7a7a 87.59%);
+  --grad-2: linear-gradient(300.12deg, #e96666 21.08%, #e98d66 84.76%);
   --large-shadow: 0px 3px 20px rgba(0, 0, 0, 0.15);
   --small-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
 }
-
 
 ::-webkit-scrollbar {
   display: none;

@@ -12,21 +12,24 @@
   width: 100%;
 }
 
-.contentWrapper .featured, .contentWrapper .feed{
+.contentWrapper .featured,
+.contentWrapper .feed {
   display: flex;
   flex-direction: column;
   padding: 3em;
 }
-.featured .title, .feed .title {
+.featured .title,
+.feed .title {
   font-size: 1.5em;
   font-weight: 500;
   line-height: 0;
 }
-.featured .grid, .feed .grid {
+.featured .grid,
+.feed .grid {
   margin-top: 2em;
   display: grid;
   width: 100%;
-	column-gap: 1.5em;
+  column-gap: 1.5em;
   row-gap: 3em;
 }
 .grid .postWrapper {
