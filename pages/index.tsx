@@ -1,18 +1,18 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import {useEffect, useState} from 'react'
-import styles from '../styles/home.module.css'
+import styles from '../styles/feed.module.css'
 import axios from 'axios'
 import Post from '../components/post'
+
 const Home: NextPage = () => {
-
   const apikey = "BkltarX2SapKEI0XAP7R1z1SqM80I9GhjFbn0B9G"
-
   const [featured, setFeatured] = useState([])
   const [feed, setFeed] = useState([])
   const [gridColumns, setGridColumns] = useState(0)
   const [filter, setFilter] = useState("All")
   const allFilters = "orion, International Space Station, hubble, Mars 2020, space x, apollo, history"
+
   useEffect(() => {
     let today = new Date()
     today.setDate(today.getDate() - 15);
@@ -37,7 +37,6 @@ const Home: NextPage = () => {
       })
     }
   }, [filter])
-
 
   function resizeGrid() {
     if (document) {

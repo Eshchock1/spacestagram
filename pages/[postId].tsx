@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import {useEffect, useState} from 'react'
-import styles from '../styles/post-page.module.css'
+import styles from '../styles/postid.module.css'
 import axios from 'axios'
 import {IoReturnUpBack} from 'react-icons/io5'
 import {BiShareAlt} from 'react-icons/bi'
@@ -21,9 +21,9 @@ const PostPage: NextPage = () => {
   const apikey = "BkltarX2SapKEI0XAP7R1z1SqM80I9GhjFbn0B9G"
 
   useEffect(() => {
-    if (router.query.postId) {
-      if ((router.query.postId as string).substring(0, 5) == "apod-") {
-        axios.get(`https://api.nasa.gov/planetary/apod?api_key=${apikey}&date=${(router.query.postId as string).substring(5)}`)
+    if (router.query.postid) {
+      if ((router.query.postid as string).substring(0, 5) == "apod-") {
+        axios.get(`https://api.nasa.gov/planetary/apod?api_key=${apikey}&date=${(router.query.postid as string).substring(5)}`)
         .then(res => {
             if (res.data.media_type == "image") {
                 setTitle(res.data.title)
@@ -31,7 +31,7 @@ const PostPage: NextPage = () => {
                 setDescription(res.data.explanation)
                 setImage(res.data.url)
                 setCreator(res.data.copyright)
-                const isLiked = localStorage.getItem(router.query.postId as string)
+                const isLiked = localStorage.getItem(router.query.postid as string)
                 setLiked(isLiked == "true")
             }
             else {
@@ -43,7 +43,7 @@ const PostPage: NextPage = () => {
         })
       }
       else {
-        axios.get(`https://images-api.nasa.gov/search?nasa_id=${router.query.postId}`)
+        axios.get(`https://images-api.nasa.gov/search?nasa_id=${router.query.postid}`)
         .then(res => {
             if (res.data.collection.items[0].data[0].media_type == "image") {
                 setTitle(res.data.collection.items[0].data[0].title)
@@ -51,7 +51,7 @@ const PostPage: NextPage = () => {
                 setDescription(res.data.collection.items[0].data[0].description)
                 setImage(res.data.collection.items[0].links[0].href)
                 setCreator(res.data.collection.items[0].data[0].center)
-                const isLiked = localStorage.getItem(router.query.postId as string)
+                const isLiked = localStorage.getItem(router.query.postid as string)
                 setLiked(isLiked == "true")
             }
             else {
@@ -62,7 +62,7 @@ const PostPage: NextPage = () => {
         })
       }
     }
-  }, [router.query.postId])
+  }, [router.query.postid])
 
   useEffect(()=>{
     window.addEventListener("resize", handleImageResize, false);
@@ -88,11 +88,11 @@ const PostPage: NextPage = () => {
   const likeAritfact = () => {
     if (liked) {
       setLiked(false)
-      localStorage.setItem(router.query.postId as string, "false")
+      localStorage.setItem(router.query.postid as string, "false")
     }
     else {
       setLiked(true)
-      localStorage.setItem(router.query.postId as string, "true")
+      localStorage.setItem(router.query.postid as string, "true")
     }
   }
 
