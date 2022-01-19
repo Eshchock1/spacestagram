@@ -22,7 +22,8 @@
 .feed .title {
   font-size: 1.5em;
   font-weight: 500;
-  line-height: 0;
+  margin: 0;
+  /* line-height: 0; */
 }
 .featured .grid,
 .feed .grid {

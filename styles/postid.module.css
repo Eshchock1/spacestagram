@@ -128,4 +128,9 @@
       height: auto;
       word-wrap: break-word;
     }
-  }  
+  }
+  @media only screen and (max-width: 550px) {
+    .rightWrapper h4 {
+      margin-top: 3em;
+    }
+  }    

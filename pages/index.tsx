@@ -100,7 +100,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <div className={styles.contentWrapper}>
           <div className={styles.featured}>
-            <h1 className={styles.title}>Spacestagram&apos;s Featured Posts</h1>
+            <h1 className={styles.title}>Spacestagram&apos;s Featured Post{gridColumns > 1 && "s"}</h1>
             <div className={styles.grid}>
               {featured.map((post: any, key: number) => {
                 return (
@@ -187,15 +187,17 @@ const Home: NextPage = () => {
                   post.data[0].description &&
                   post.data[0].title &&
                   post.data[0].date_created && (
-                    <Post
-                      key={key}
-                      id={post.data[0].nasa_id}
-                      title={post.data[0].title}
-                      description={post.data[0].description}
-                      creator={post.data[0].center}
-                      image={post.links[0].href}
-                      date={post.data[0].date_created}
-                    />
+                    <div key={key} className={styles.postWrapper}>
+                      <Post
+                        key={key}
+                        id={post.data[0].nasa_id}
+                        title={post.data[0].title}
+                        description={post.data[0].description}
+                        creator={post.data[0].center}
+                        image={post.links[0].href}
+                        date={post.data[0].date_created}
+                      />
+                    </div>
                   )
                 );
               })}
