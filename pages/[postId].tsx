@@ -7,6 +7,7 @@ import axios from "axios";
 import { IoReturnUpBack } from "react-icons/io5";
 import { BiShareAlt } from "react-icons/bi";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { FiExternalLink } from 'react-icons/fi'
 
 const PostPage: NextPage = () => {
   const router = useRouter();
@@ -107,7 +108,6 @@ const PostPage: NextPage = () => {
 
   function handleImageResize() {
     if (document && document.getElementsByTagName("IMG")[0]) {
-      console.log("ASDASDASD")
       let image = document.getElementsByTagName("IMG")[0];
       let imageAspectRatio =
         (image as HTMLImageElement).naturalWidth /
@@ -142,9 +142,9 @@ const PostPage: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Post | Spacetagram</title>
+        <title>Post | Spacestagram</title>
         <meta
-          name={title ? "Spacetagram | " + title : "Spacetagram"}
+          name={title ? "Spacestagram | " + title : "Spacestagram"}
           content={
             description
               ? description
@@ -157,7 +157,7 @@ const PostPage: NextPage = () => {
       {title && date && image && description && (
         <main className={styles.main}>
           <div className={styles.leftWrapper}>
-            <button onClick={() => router.replace("/")}>
+            <button className={styles.return} onClick={() => router.replace("/")}>
               <IoReturnUpBack size={24} />
               &nbsp; Return to feed
             </button>
@@ -171,12 +171,15 @@ const PostPage: NextPage = () => {
             </div>
             <div
               className={styles.share}
-              onClick={(e) => {
+              onClick={() => {
                 navigator.clipboard.writeText(window.location.href);
                 setShareLinkCopied(true);
               }}
             >
               {shareLinkCopied ? "link copied" : <BiShareAlt />}
+            </div>
+            <div className={styles.original} onClick={() => window.open(image)}>
+              {<FiExternalLink />}
             </div>
             <h4>A picture by {creator ? creator : "Unknown"}</h4>
             <h1>{title}</h1>

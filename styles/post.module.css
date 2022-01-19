@@ -86,14 +86,14 @@
   }
   .descriptionContainer button {
     position: absolute;
-    padding: 0.5em 2em;
+    padding: 0.3em 1.5em;
     bottom: 1em;
     right: 1em;
     background: var(--text-1);
     color: white;
     border-radius: 20em;
     border: none;
-    font-size: 1em;
+    font-size: 0.9em;
     box-shadow: var(--small-shadow);
     cursor: pointer;
     font-family: "Prompt", sans-serif;

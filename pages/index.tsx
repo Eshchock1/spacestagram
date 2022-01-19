@@ -89,9 +89,9 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Spacetagram</title>
+        <title>Spacestagram</title>
         <meta
-          name="Spacetagram"
+          name="Spacestagram"
           content="Image sharing platform built on NASA’s image APIs for Shopify's front end developer intern challenge"
         />
         <link rel="icon" href="/favicon.png" />
@@ -100,7 +100,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <div className={styles.contentWrapper}>
           <div className={styles.featured}>
-            <h1 className={styles.title}>Featured Posts</h1>
+            <h1 className={styles.title}>Spacestagram's Featured Posts</h1>
             <div className={styles.grid}>
               {featured.map((post: any, key: number) => {
                 return (

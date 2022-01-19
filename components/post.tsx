@@ -87,7 +87,7 @@ const Post: FC<{
         <h1>{formatText(title, 55)}</h1>
         <p>{formatText(description, 65)}</p>
         <button className={styles.visit} onClick={() => router.push("/" + id)}>
-          Visit
+          Read more
         </button>
       </div>
     </div>
